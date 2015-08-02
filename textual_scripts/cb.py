@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 
 import sys
-import hashlib
+# sys.argv has [script location, current room, text]
 
 if __name__ == '__main__':
         try:
-            print(sys.args)
-        except ValueError:
-            print('hi')
+            print("/znc clearbuffer {}".format(sys.argv[1]))
+        except:
+            # silently fail because we dont want to print out to the room
+            pass
